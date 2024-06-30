@@ -22,7 +22,7 @@
         <label for="amount">Amount:</label>
         <input type="number" id="amount" name="amount" min="1" value="1">
         <br>
-        <button type="button" onclick="addToProductList()">Add</button>
+        <button type="button" id="addButton">Add</button>
     </form>
  
     <h2>Product List</h2>
@@ -43,28 +43,23 @@
     Price including VAT <span id="netPrice"></span>
 
     <script>
+        var totalPrice = 0;
+
+        $(document).ready(function() {
+            $('#addButton').click(function() {
+                var accessory = $('#accessory').val();
+                var accessoryName = $('#accessory option:selected').text();
+                var amount = $('#amount').val();
+                var price = calculatePrice(accessory) * amount;
  
-        function addToProductList() {
-            var accessory = document.getElementById("accessory").value;
-            var accessoryName = document.getElementById("accessory").innerText;
-            var amount = document.getElementById("amount").value;
-            var price = calculatePrice(accessory);
+                var row = '<tr><td>' + accessoryName + '</td><td>' + amount + '</td><td>$' + price.toFixed(2) + '</td></tr>';
+                $('#productList').append(row);
  
-            var table = document.getElementById("productList");
-            var row = table.insertRow(-1);
-            var accessoryCell = row.insertCell(0);
-            var amountCell = row.insertCell(1);
-            var priceCell = row.insertCell(2);
- 
-            accessoryCell.innerHTML = accessory;
-            amountCell.innerHTML = amount;
-            priceCell.innerHTML = "$" + price;
- 
-            updateTotalPrice(price);
-        }
- 
+                updateTotalPrice(price);
+            });
+        });
+
         function calculatePrice(accessory) {
-            // Add your own logic to calculate the price based on the selected accessory
             switch (accessory) {
                 case "p123":
                     return 50;
@@ -78,20 +73,17 @@
                     return 0;
             }
         }
-        var totalPrice = 0
+
         function updateTotalPrice(price) {
-            var totalPriceElement = document.getElementById("totalPrice");
-            // var totalPrice = parseFloat(totalPriceElement.innerHTML);
-            console.log(totalPrice,price)
             totalPrice += price;
-            totalPriceElement.innerHTML = totalPrice.toFixed(2);
-            
+            $('#totalPrice').text(totalPrice.toFixed(2));
+
             var vatRate = 0.07;
             var vatAmount = totalPrice * vatRate;
-            document.getElementById("vatAmount").textContent = vatAmount.toFixed(2);
-            document.getElementById("netPrice").textContent = (totalPrice + vatAmount).toFixed(2);
+            $('#vatAmount').text(vatAmount.toFixed(2));
+            $('#netPrice').text((totalPrice + vatAmount).toFixed(2));
         }
     </script>
 </body>
  
-</html></select></form>
+</html>
