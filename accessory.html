@@ -29,7 +29,8 @@
           <h1 class="name">Assumption</h1>
           <h3><b>Car Accessories Shop</b></h3>
           <p>
-            <br /><b>Location: </b>Samutrprakarn, Thailand <br /><b>Number: </b>12345678
+            <br /><b>Location: </b>Samutrprakarn, Thailand <br /><b>Number: </b
+            >12345678
             <br />
           </p>
         </div>
@@ -40,75 +41,112 @@
       <hr />
     </div>
     <div class="container">
-        <div class="row">
-          <div>
-            <h6><b>Order ID: </b>6511333</h6>
-            <h6><b>Customer Name: </b>Casper</h6>
-            <h6><b>Phone number: </b>348734829</h6>
-            <h6><b>Address: </b>Asoke</h6>
-            <h6><b>Date:</b>14/07/2024</h6>
-          </div>
+      <div class="row">
+        <div>
+          <h6><b>Order ID: </b>6511333</h6>
+          <h6><b>Customer Name: </b>Casper</h6>
+          <h6><b>Customer number: </b>348734829</h6>
+          <h6><b>Address: </b>Ratchathewi</h6>
+          <h6><b>Date:</b>18/07/2024</h6>
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAddProduct">Add New Product</button>
-        </div>
-        <br>
-          <table id="productList" class="table table-striped">
-            <tr>
-              <th>No.</th>
-              <th>Accessory</th>
-              <th>Quantity</th>
-              <th>Remove</th>
-              <th>Price</th>
-            </tr>
-          </table>
-          <p class="total">Total Price: $<span id="totalPrice">0</span></p>
-          <br />
-          <b>VAT:</b> <span id="vatAmount"></span>
-          <br />
-          <b>Price including VAT:</b><span id="netPrice"></span>
-          <hr>
-          <p class="end">
-            If you have any question concerning this invoices, call: 12345678
-            <br />
-            <br /><b>THANK YOU FOR YOUR BUSINESS</b>
-          </p>
       </div>
-  
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#modalAddProduct"
+        >
+          Add New Product
+        </button>
+      </div>
+      <br />
+      <table id="productList" class="table table-striped">
+        <tr>
+          <th>No.</th>
+          <th>Accessory</th>
+          <th>Quantity</th>
+          <th>Remove</th>
+          <th>Price</th>
+        </tr>
+      </table>
+      <p class="total">Total Price: $<span id="totalPrice">0</span></p>
+      <br />
+      <b>VAT:</b> <span id="vatAmount"></span>
+      <br />
+      <b>Price including VAT:</b><span id="netPrice"></span>
+      <hr />
+      <p class="end">
+        If you have any question concerning this invoices, call: 12345678
+        <br />
+        <br /><b>THANK YOU FOR YOUR BUSINESS</b>
+      </p>
+    </div>
+
     <!-- Modal -->
-  <div class="modal fade" id="modalAddProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title fs-5" id="staticBackdropLabel">Add Product</h2>
-        </div>
-        <div class="modal-body">
+    <div
+      class="modal fade"
+      id="modalAddProduct"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="staticBackdropLabel">
+              Add Product
+            </h2>
+          </div>
+          <div class="modal-body">
             <!-- input form start -->
             <div class="col-mb-3">
-                <form id="accessoryForm">
-                    <label for="accessory" class="form-label">Select an accessory:</label>
-                    <select id="accessory" class="form-select" name="accessory">
-                        <option selected disabled hidden value="">Choose Accessories</option>
-                        <option value="0">Car Covers</option>
-                        <option value="1">Seat Covers</option>
-                        <option value="2">Floor Mats</option>
-                        <option value="3">Door Visors</option>
-                    </select>
-                    <br />
-                    <label for="quantity" class="form-label">Quantity:</label>
-                    <input type="number" id="quantity" class="form-control" name="quanitty" min="1" value="1" />
-                    <br />
-                  </form>
+              <form id="accessoryForm">
+                <label for="accessory" class="form-label"
+                  >Select an accessory:</label
+                >
+                <select id="accessory" class="form-select" name="accessory">
+                  <option selected disabled hidden value="">
+                    Choose Accessories
+                  </option>
+                  <option value="0">Car Covers</option>
+                  <option value="1">Seat Covers</option>
+                  <option value="2">Floor Mats</option>
+                  <option value="3">Door Visors</option>
+                </select>
+                <br />
+                <label for="quantity" class="form-label">Quantity:</label>
+                <input
+                  type="number"
+                  id="quantity"
+                  class="form-control"
+                  name="quanitty"
+                  min="1"
+                  value="1"
+                />
+                <br />
+              </form>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" id="closeButton" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="addButton">Add Product</button>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="closeButton"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="addButton">
+              Add Product
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- main container ends -->
+    <!-- main container ends -->
 
     <!-- js code starts -->
     <script>
@@ -119,8 +157,8 @@
         var modal = $("#modalAddProduct");
         var btn = $("#openModalButton");
 
-        $('#modalAddProduct').on('show.bs.modal', function () {
-            $('#accessoryForm')[0].reset()
+        $("#modalAddProduct").on("show.bs.modal", function () {
+          $("#accessoryForm")[0].reset();
         });
 
         $("#addButton").click(function () {
@@ -144,7 +182,7 @@
 
           updateTotalPrice(price);
 
-          $("#modalAddProduct").modal('hide');
+          $("#modalAddProduct").modal("hide");
         });
 
         $("#productList").on("click", ".deleteButton", function () {
