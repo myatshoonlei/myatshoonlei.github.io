@@ -1,0 +1,22 @@
+/* Add this to your mystyle.module.css */
+
+.full-height {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+.table-container {
+  width: 100%;
+  max-width: 1200px; /* Optional: Adjust to your desired max-width */
+  padding: 1rem;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.textCenter {
+  text-align: center;
+}
